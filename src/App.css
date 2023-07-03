@@ -1,38 +1,362 @@
-.App {
-  text-align: center;
+body{
+  padding: 0;
+  height: 100vh;
+  /* user-select: none;
+  -webkit-app-region: drag; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title-bar{
+  width: 100vw;
+  user-select: none;
+  -webkit-app-region: drag;
+  background-color: rgba(255, 255, 255, 0);
+  height: 30px;
+  position: absolute;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Signup Page */
+
+.signup-container{
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: rgba(9, 9, 9, 0.558);
+  backdrop-filter: blur(5px);
+}
+
+.signup-container h1{
+  background-color: rgb(15, 130, 0);
+  width: 60%;
+  text-align: center;
   color: white;
+  margin: 0;
+  padding: 10px 0 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.signup-container-dark{
+  width: 60%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #bababa;
+  flex-direction: column;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.signup-input-set{
+  width: 60%;
+  justify-content: flex-start;
+  flex-direction: column;
+  display: flex;
+}
+
+.signup-input-set input{
+  width: 100%;
+  font-size: 22px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.signup-input-set label{
+  margin-left: 4px;
+  font-size: 18px;
+}
+
+.signup-back{
+  background-image: url('../public/background.png');
+  width: 100%;
+  height: 100%;
+}
+
+/* Side Bar Styling */
+
+.side-bar{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 15%;
+  background-color: rgb(15, 130, 0);
+  align-items: center;
+}
+
+.side-tile{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 0;
+  background-color: #bababa;
+  width: 75%;
+  border-radius: 25px;
+  padding: 3% 5% 3% 8%;
+  cursor: pointer;
+}
+
+.side-tile h4{
+  margin: 0;
+}
+
+.side-tile img{
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* Display Panel  */
+
+.display-panel{
+  width: 85%;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.option-set{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+  margin-top: 50px;
+}
+
+.option-icon{
+  background-color: rgb(15, 130, 0);
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.no-data-head{
+  font-weight: 500;
+  color:#5d5d5d;
+}
+
+/* Login item */
+
+.login-item{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center;
+  background-color: #ebebeb;
+  margin: 8px 20px;
+  border-radius: 8px;
+}
+
+.login-item h2{
+  width: 25%;
+  text-align: center;
+}
+
+.login-item h3{
+  width: 40%;
+  text-align: center;
+  font-weight: 400;
+  color: rgb(0, 106, 255);
+  cursor: pointer;
+}
+
+.login-item div{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.title-icon{
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.pass-icons-img{
+  width: 1.2vw;
+  height: 1.2vw;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Generator Styling */
+
+#type-select{
+  width: 30vw;
+  font-size: 25px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#quantity{
+  width: 10vw;
+  font-size: 25px;
+  border-radius: 15px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.output-set{
+  display: 'flex';
+  flex-direction: 'column';
+  margin-top: 20px;
+}
+
+.output-set div{
+  margin-bottom: 10px;
+}
+
+/* Secure Notes Styles */
+
+.note-div{
+  /* padding: 5px 0px; */
+  padding: 20px 2%;
+  width: 46%;
+}
+
+.note-div h3{
+  background-color: #5d5d5d;
+  margin: 0;
+  padding: 5px 20px;
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-div h3 div img{
+  cursor: pointer;
+  background-color: white;
+  border-radius: 50%;
+  width: 18px;
+  padding: 3px;
+  margin-left: 0.5vw;
+}
+
+.note-div h3 div{
+  display: flex;
+  align-items: center;
+}
+
+.note-div h5{
+  background-color: #dadada;
+  margin: 0;
+  padding: 10px 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Add Screen Styles */
+
+.add-div{
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.add-box{
+  animation-name: comingIn;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  transition-timing-function: ease;
+}
+
+@keyframes comingIn{
+  0%{
+    height: 0;
+    width: 0;
   }
-  to {
-    transform: rotate(360deg);
+  10%{
+    width: 60%;
+  }
+  100%{
+    height: 50vh;
+  }
+}
+
+.add-input-set input{
+  margin-bottom: 20px;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.add-input-set textarea{
+  margin-bottom: 20px;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 400;
+  width: '100%';
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.add-input-set {
+  animation-name: showing; 
+  transition-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  /* animation-delay: 1.5s; */
+}
+
+.add-button-set{
+  width: 60%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.add-button-set button{
+  background-color: rgb(0, 81, 255);
+  border: none;
+  padding: 5px 0px;
+  width: 80px;
+  color: white;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@keyframes showing{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 100%;
   }
 }
