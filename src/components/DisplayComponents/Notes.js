@@ -2,7 +2,7 @@ function NotesPage({ data, setData, updateHandler, deleteHandler }) {
 
     return (
         <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', overflowX: 'hidden', justifyContent: 'center' }}>
-            <div style={{ display: 'flex', flexWrap: 'wrap', overflowX: 'hidden', justifyContent: 'flex-start',width: 'max-content' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', overflowX: 'hidden', justifyContent: 'flex-start',width: '100%' }}>
                 {data.notes.map((ele) => {
                     return (
                         <div className="note-div" key={ele.id}>
