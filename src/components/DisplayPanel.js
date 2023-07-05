@@ -37,8 +37,8 @@ function DisplayPanel({ tab, setTab, data, setData, setAuthenticated, setChangin
         <>
             <div className="display-panel">
                 <div className="option-set">
-                    <img className="option-icon" src="addIcon.png" alt="Add" onClick={addPassHandler} />
-                    <img className="option-icon" style={{ marginRight: 30 }} src="settingIcon.png" alt="settings" onClick={() => { 
+                    <img className="option-icon" title="Add" src="addIcon.png" alt="Add" onClick={addPassHandler} />
+                    <img className="option-icon" title="Change Password" style={{ marginRight: 30 }} src="settingIcon.png" alt="settings" onClick={() => { 
                         setIsChanging(true);
                         setAddState('flex');
                         setIsDeleting(true);
